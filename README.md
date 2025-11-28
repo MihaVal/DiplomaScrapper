@@ -1,6 +1,6 @@
-# Slovenski spletni komentarji – spletni pajek in analiza sentimenta
+# Slovenski spletni komentarji – Web Scraper in analiza sentimenta
 
-Ta projekt je del moje diplomske naloge.  
+Ta projekt je del moje diplomske naloge.
 Zbiral bo komentarje uporabnikov s slovenskih novičarskih portalov (RTV & 24ur) in na njih izvedel analizo sentimenta z uporabo že obstoječih NLP modelov.
 
 ## Glavni cilji
@@ -29,3 +29,23 @@ Vse Python odvisnosti so navedene v datoteki `requirements.txt`.
    git clone https://github.com/TVOJ_USERNAME/TVOJ_REPO.git
    cd TVOJ_REPO
    ```
+
+2. Ustvarjanje in aktivacija virtualnega okolja:
+
+   ```
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+3. Namestitev potrebnih paketov:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Pomembne opombe
+
+- Projekt je namenjen izključno raziskovalnim in izobraževalnim namenom.
+- Scrapanje spoštuje datoteko robots.txt posameznih spletnih strani in uporablja počasno, vljudno hitrost pošiljanja zahtevkov (npr. sleep() med zahtevki).
+- Zbirajo se samo javno dostopni komentarji brez občutljivih osebnih podatkov; podatki se obravnavajo anonimno.
+- Za analizo sentimenta se uporabljajo že pripravljeni modeli, ki podpirajo slovenski jezik (npr. večjezični modeli z HuggingFace).
