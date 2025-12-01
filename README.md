@@ -5,13 +5,16 @@ Zbiral bo komentarje uporabnikov s slovenskih novičarskih portalov (RTV & 24ur)
 
 ## Glavni cilji
 
-- avtomatsko pobiranje člankov in komentarjev z izbranih slovenskih novičarskih strani
+- pol-avtomatsko pobiranje člankov in komentarjev z izbranih slovenskih novičarskih strani
 - shranjevanje podatkov v strukturirani obliki (CSV)
 - čiščenje in priprava besedila za analizo
 - analiza sentimenta (pozitivno / negativno / nevtralno) z uporabo pripravljenih modelov
 - osnovna statistična analiza rezultatov (porazdelitev sentimenta po portalih, temah, času)
+- manjši UI za lažjo uporabo
 
 ## Funkcionalnosti
+
+- scrapea katerikoli link iz spletnih novičarskih portalov (trenutno 24ur) in ponudi ime avtorja, vsebino, všečke in nevšečke na prvi strani komentarjev
 
 ## Zahteve
 
