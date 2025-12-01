@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-scrapped_page = requests.get("https://www.24ur.com/sport/odbojka/pajenk-radnicki-bo-naredil-vse-da-nam-zagreni-zivljenje.html")
+scrapped_page = requests.get("https://www.24ur.com/novice/slovenija/pahor-razburja-s-kampanjo.html")
 soup = BeautifulSoup(scrapped_page.text, "html.parser")
 
 #quotes = soup.find_all("div", attrs={"class" : "comment__content"})
@@ -17,7 +17,8 @@ comment_block = soup.find_all("div", attrs={"class" : "comment"})
 for comment in comment_block:
     author_part = comment.find("a", attrs={"class" : "comment__author"})
     text_part = comment.find("div", attrs={"class" : "comment__content--body"})
-    rating_part = comment.find("a", attrs={"class" : "comment__vote"})
+    likes = comment.find("span", attrs={"class" : "comment-likes-positive"})
+    dislikes = comment.find("span", attrs={"class" : "comment-likes-negative"})
 
     """
     dodajaj stvari ki jih hočeš vidit drugo pa izpusti in se ne bi smelo 
@@ -31,6 +32,7 @@ for comment in comment_block:
     """
     author = author_part.get_text(strip=True) if author_part else ""
     text = text_part.get_text(" ", strip=True) if text_part else ""
-    rating = rating_part.get_text(strip=True) if rating_part else ""
+    rating_plus = likes.get_text(strip=True) if likes else ""
+    rating_minus = dislikes.get_text(strip=True) if dislikes else ""
 
-    print(f"{author}: {text} | {rating}")
+    print(f"{author}: {text} | Všečki/Nevšečki [+{rating_plus}/-{rating_minus}]")
